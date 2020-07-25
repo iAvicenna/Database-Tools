@@ -12,7 +12,10 @@ import unittest
 import sys
 import os
 import json
-sys.path.append('../modules/')
+script_parent_path = os.path.dirname(os.path.dirname(os.path.abspath( __file__ )))
+sys.path.append(script_parent_path + '/' + '/modules/')
+
+
 from tools import dict_search, dict_key_search, deep_eq, convert_titer
 from CityList import CityList
 from TiterTable import TiterTable
