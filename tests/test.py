@@ -16,9 +16,7 @@ script_parent_path = os.path.dirname(os.path.dirname(os.path.abspath( __file__ )
 sys.path.append(script_parent_path + '/' + '/modules/')
 
 
-from tools import dict_search, dict_key_search, deep_eq, convert_titer
-from CityList import CityList
-from TiterTable import TiterTable
+
 
 class HiddenPrints:
     def __enter__(self):
@@ -31,6 +29,9 @@ class HiddenPrints:
 
 with HiddenPrints():
     from AntigenicDatabase import AntigenDataset, SerumDataset
+    from tools import dict_search, dict_key_search, deep_eq, convert_titer
+    from CityList import CityList
+    from TiterTable import TiterTable
 
 
 
@@ -203,8 +204,7 @@ class TestSerumDataset(unittest.TestCase):
         self.assertEqual(len(entries_found), 1)
         self.assertEqual(entries_found[0].id, 'CC042E')
 
-    def test_fail(self):
-        self.assertEqual(1,0)
+
 
 class TestTiterTable(unittest.TestCase):
 
